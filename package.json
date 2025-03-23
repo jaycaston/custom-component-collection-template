@@ -1,17 +1,20 @@
 {
-  "name": "my-react-app",
+  "name": "retool-audio-trimmer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@tryretool/custom-component-support": "latest",
+    "lucide-react": "^0.482.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "wavesurfer.js": "^7.9.1"
   },
   "engines": {
     "node": ">=20.0.0"
   },
   "scripts": {
     "dev": "npx retool-ccl dev",
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react --inject ./src/css-inject.js",
     "deploy": "npx retool-ccl deploy"
   },
   "browserslist": {
@@ -30,9 +33,21 @@
     "@types/react": "^18.2.55",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
+    "autoprefixer": "^10.4.21",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
+    "postcss": "^8.5.3",
+    "postcss-modules": "^6.0.0",
     "prettier": "^3.0.3",
-    "postcss-modules": "^6.0.0"
+    "tailwindcss": "^3.4.17",
+    "tsup": "^8.4.0",
+    "typescript": "^5.2.2"
+  },
+  "retoolCustomComponentLibraryConfig": {
+    "name": "AudioTrimmerV2",
+    "label": "Audio Trimmer v2",
+    "description": "second try at custom component for clipping.",
+    "entryPoint": "src/index.tsx",
+    "outputPath": "dist"
   }
 }

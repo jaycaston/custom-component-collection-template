@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base variables */
+:root {
+  --audio-trimmer-primary: #40b193;
+  --audio-trimmer-primary-rgb: 64, 177, 147;
+  --audio-trimmer-bg: white;
+  --audio-trimmer-text: #333;
+  --audio-trimmer-border: #e5e7eb;
+}
+
+/* Main container - all styles scoped under this class */
+.retool-audio-trimmer-root {
+  all: initial; /* Reset all styles */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--audio-trimmer-text);
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.retool-audio-trimmer-root * {
+  box-sizing: border-box;
+}
+
+/* Container styles */
+.retool-audio-trimmer-root .audio-trimmer-container {
+  border: 1px solid var(--audio-trimmer-border);
+  border-radius: 8px;
+  padding: 16px;
+  background-color: var(--audio-trimmer-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Waveform container */
+.retool-audio-trimmer-root .waveform-container {
+  margin-bottom: 16px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #f9fafb;
+  min-height: 100px;
+  width: 100%;
+}
+
+/* Player controls */
+.retool-audio-trimmer-root .audio-player-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* Button styling */
+.retool-audio-trimmer-root .audio-player-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 500;
+  background-color: var(--audio-trimmer-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.retool-audio-trimmer-root .audio-player-button:hover {
+  background-color: #359982;
+}
+
+.retool-audio-trimmer-root .audio-player-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Info display */
+.retool-audio-trimmer-root .audio-trim-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Error message */
+.retool-audio-trimmer-root .error-message {
+  padding: 12px;
+  margin-bottom: 12px;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  color: #b91c1c;
+}
+
+/* Loading state */
+.retool-audio-trimmer-root .audio-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 128px;
+  background-color: #f9fafb;
+  border-radius: 6px;
+}
+
+/* Instructions */
+.retool-audio-trimmer-root .instructions {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 16px;
+}
+
+/* Base button styling */
+.audio-trimmer-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  padding: 8px 16px;
+  background-color: var(--primary-color, #40b193);
+  color: white;
+  border: none;
+}
+
+.audio-trimmer-btn:hover {
+  opacity: 0.9;
+}
+
+.audio-trimmer-btn:focus {
+  outline: 2px solid rgba(var(--primary-color-rgb, 64, 177, 147), 0.3);
+  outline-offset: 2px;
+}
+
+/* Fallback player */
+.retool-audio-trimmer-root .fallback-player {
+  padding: 12px;
+  margin-top: 8px;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.retool-audio-trimmer-root .fallback-player p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.retool-audio-trimmer-root .fallback-player audio {
+  width: 100%;
+  margin-top: 8px;
+}
+
